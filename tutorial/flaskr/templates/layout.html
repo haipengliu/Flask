@@ -1,0 +1,14 @@
+<!doctype html>
+<title>信息化监测系统</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>信息化监测系统</h1>
+  <div class=metanav>
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">登陆系统</a>
+  {% else %}
+    <a href="{{ url_for('logout') }}">退出系统</a>
+  {% endif %}
+  </div>
+  {% block body %}{% endblock %}
+</div>
