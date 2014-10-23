@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>{{title}} </h1>
+
+<form action = "" method = "post" name = "login">
+
+  {{form.hidden_tag()}}
+  <p>
+    输入用户名:<br>
+    {{form.user_id(size = 50)}}<br>
+  </p>
+  <p>
+    输入密码:<br>
+    {{form.password(size = 50)}}<br>
+  </p>
+  <p><input type = "submit" value = "登录"></p>
+
+</form>
+
+{% endblock%}

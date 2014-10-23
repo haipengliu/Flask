@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>修改密码</h2>
+ 
+  {% for message in form.username.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+   
+  {% for message in form.oldpwd.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  
+  {% for message in form.newpwd1.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  
+  {% for message in form.newpwd2.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+   
+  <form action="{{ url_for('changepwd') }}" method=post>
+    {{ form.hidden_tag() }}
+     
+    {{ form.username.label }}
+    {{ form.username }}
+     
+    {{ form.oldpwd.label }}
+    {{ form.oldpwd }}
+    
+    {{ form.newpwd1.label }}
+    {{ form.newpwd1 }}
+    
+    {{ form.newpwd2.label }}
+    {{ form.newpwd2 }}
+     
+    {{ form.submit }}
+  </form>
+     
+{% endblock %}

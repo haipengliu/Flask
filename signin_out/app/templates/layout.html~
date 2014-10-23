@@ -1,0 +1,29 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - 信息化检测系统</title>
+    {% else %}
+    <title>未登录</title>
+    {% endif %}
+  </head>
+
+  <body>
+    <div>信息化检测系统</a></div>
+    <hr>
+    
+
+  {% with messages = get_flashed_messages()%}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li> {{message}}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  
+  {% block content %}{% endblock %}
+    
+  </body>
+
+</html>

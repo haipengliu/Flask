@@ -1,0 +1,2 @@
+CSRF_ENABLED = True
+SECRET_KEY = 'please forgive me, I will carry on, by my loves, bye'
